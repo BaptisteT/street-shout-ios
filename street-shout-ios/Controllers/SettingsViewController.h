@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SettingsViewControllerDelegate;
+
 @interface SettingsViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) id <SettingsViewControllerDelegate> settingsViewControllerdelegate;
+
+@end
+
+@protocol SettingsViewControllerDelegate
+
+- (void)moveToImagePickerController;
+- (void)startLocationUpdate;
+- (void)stopLocationUpdate;
 
 @end
