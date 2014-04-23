@@ -344,7 +344,6 @@
     NSString *path =  [[AFStreetShoutAPIClient getBasePath] stringByAppendingString:@"users/facebook_create_or_update.json"];
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    
     [parameters setObject:[params objectForKey:@"email"] forKey:@"email"];
     [parameters setObject:[params objectForKey:@"id"] forKey:@"facebook_id"];
     [parameters setObject:[params objectForKey:@"name"] forKey:@"facebook_name"];
@@ -356,7 +355,7 @@
         
         NSDictionary *result = [JSON valueForKeyPath:@"result"];
         
-        BOOL isSignup = (BOOL) [result valueForKey:@"is_signup"];
+        BOOL isSignup = [[result valueForKey:@"is_signup"] boolValue];
         
         NSDictionary *rawUser = [result valueForKeyPath:@"user"];
         User *user = [User rawUserToInstance:rawUser];
