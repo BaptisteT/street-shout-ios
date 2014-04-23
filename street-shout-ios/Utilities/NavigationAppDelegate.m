@@ -130,8 +130,16 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    // todo make this robust
     UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
-    [navController popToViewController:navController.childViewControllers[1] animated:NO];
+    if (navController.childViewControllers.count > 1) {
+        if([navController.childViewControllers[1] isKindOfClass:[MultipleViewController class]]) {
+            [navController popToViewController:navController.childViewControllers[1] animated:NO];
+        } else if(navController.childViewControllers.count > 2 && [navController.childViewControllers[2] isKindOfClass:[MultipleViewController class]]) {
+            [navController popToViewController:navController.childViewControllers[2] animated:NO];
+        }
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -332,25 +340,25 @@
             [SessionUtilities updateCurrentUserInfoInPhone:user];
             [SessionUtilities securelySaveCurrentUserToken:authToken];
             
-            //Mixpanel tracking
             if (isSignup) {
+                // Issue a Facebook Graph API request to get your user's friend list
+                [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                    if (!error) {
+                        // result will contain an array with your user's friends in the "data" key
+                        NSArray *friendObjects = [result objectForKey:@"data"];
+                        // Use it to create automatically relationships in database
+                        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                            [AFStreetShoutAPIClient createRelationshipsFromFacebookFriends:friendObjects success:nil failure:nil];
+                        });
+                    }
+                }];
+                
+                //Mixpanel tracking
                 [TrackingUtilities identifyWithMixpanel:user isSigningUp:YES];
                 [TrackingUtilities trackSignUpWithSource:@"Facebook"];
             } else {
                 [TrackingUtilities identifyWithMixpanel:user isSigningUp:NO];
             }
-            
-            // Issue a Facebook Graph API request to get your user's friend list
-            [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                if (!error) {
-                    // result will contain an array with your user's friends in the "data" key
-                    NSArray *friendObjects = [result objectForKey:@"data"];
-                    // Use it to create automatically relationships in database
-                    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                        [AFStreetShoutAPIClient createRelationshipsFromFacebookFriends:friendObjects success:nil failure:nil];
-                    });
-                }
-            }];
 
             [self skipWelcomeController];
         });
