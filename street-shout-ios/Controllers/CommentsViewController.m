@@ -40,7 +40,7 @@
     self.commentsTableView.dataSource = self;
     
     self.addCommentTextField.delegate = self;
-    
+    self.addCommentContainerView.translatesAutoresizingMaskIntoConstraints = YES;
     //Nav Bar
     [ImageUtilities drawCustomNavBarWithLeftItem:@"back" rightItem:nil title:@"Comments" sizeBig:YES inViewController:self];
     

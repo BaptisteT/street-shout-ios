@@ -136,7 +136,6 @@
         self.likesCountButton.hidden = NO;
         self.likesCountIcon.hidden = NO;
         
-        
         BOOL currentUserLikedShout = NO;
         
         //Check if current user liked this shout

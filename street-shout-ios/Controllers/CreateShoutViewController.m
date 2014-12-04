@@ -56,6 +56,7 @@
     [self.shoutImageView setImage:[ImageUtilities cropWidthOfImage:self.sentImage by:(1-1/rescalingRatio)]];
     
     self.addDescriptionField.delegate = self;
+    self.containerView.translatesAutoresizingMaskIntoConstraints = YES;
     
     // observe keyboard show notifications to resize the text view appropriately
     [[NSNotificationCenter defaultCenter] addObserver:self
