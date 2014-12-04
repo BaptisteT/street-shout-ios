@@ -19,7 +19,7 @@
 @property (nonatomic) NSUInteger userId;
 @property (nonatomic) double lat;
 @property (nonatomic) double lng;
-@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) NSString *shoutDescription;
 @property (strong, nonatomic) NSString *created;
 @property (strong, nonatomic) NSString *username;
 @property (nonatomic) BOOL removed;

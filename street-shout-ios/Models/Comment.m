@@ -27,7 +27,7 @@
     comment.shouterId = [[rawComment objectForKey:SHOUTER_ID] integerValue];
     comment.commenterId = [[rawComment objectForKey:COMMENTER_ID] integerValue];
     comment.commenterUsername = [rawComment objectForKey:COMMENTER_USERNAME];
-    comment.description = [rawComment objectForKey:DESCRIPTION];
+    comment.commentDescription = [rawComment objectForKey:DESCRIPTION];
     comment.created = [rawComment objectForKey:CREATED_AT];
     
     NSString *rawLat = [rawComment objectForKey:LAT];

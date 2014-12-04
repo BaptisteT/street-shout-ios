@@ -172,7 +172,7 @@
         
         self.shoutUsername.text = [NSString stringWithFormat:@"@%@", self.shout.anonymous? @"Anonymous" : self.shout.username];
 
-        self.shoutContent.text = self.shout.description;
+        self.shoutContent.text = self.shout.shoutDescription;
         
         NSArray *shoutAgeStrings = [TimeUtilities ageToShortStrings:[TimeUtilities getShoutAge:self.shout.created]];
         

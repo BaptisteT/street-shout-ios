@@ -298,6 +298,12 @@
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     self.locationManager.distanceFilter = kDistanceBeforeUpdateLocation;
+    [self.locationManager requestWhenInUseAuthorization];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end

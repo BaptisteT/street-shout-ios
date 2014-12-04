@@ -174,4 +174,9 @@
     [self.profilePictureView.layer setCornerRadius: 5.0];
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
 @end

@@ -31,7 +31,7 @@
     shout.userId = [[rawShout objectForKey:USER_ID] integerValue];
     shout.lat = [[rawShout objectForKey:SHOUT_LAT] doubleValue];
     shout.lng = [[rawShout objectForKey:SHOUT_LNG] doubleValue];
-    shout.description = [rawShout objectForKey:SHOUT_DESCRIPTION];
+    shout.shoutDescription = [rawShout objectForKey:SHOUT_DESCRIPTION];
     shout.created = [rawShout objectForKey:SHOUT_CREATED_AT];
     shout.username = [rawShout objectForKey:SHOUT_USERNAME];
     shout.removed = [[rawShout objectForKey:SHOUT_REMOVED] integerValue] == 1 ? YES : NO;

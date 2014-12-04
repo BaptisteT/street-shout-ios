@@ -136,7 +136,7 @@
         [cell.shoutImageView setHidden:NO];
         [cell.imageViewDropShadow setHidden:NO];
         
-        cell.shoutContentLabel.text = shout.description;
+        cell.shoutContentLabel.text = shout.shoutDescription;
         cell.shoutUserNameLabel.text = [NSString stringWithFormat:@"by %@", shout.anonymous? @"Anonymous" : shout.username];
         
         NSArray *shoutAgeStrings = [TimeUtilities ageToStrings:[TimeUtilities getShoutAge:shout.created]];

@@ -10,29 +10,29 @@
 	<string>street-shout-ios</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E0BE5306-B187-41B4-912D-5B08E5290F99</key>
-		<string>ssh://github.com/bastienbeurier/street-shout-ios.git</string>
+		<key>2F7C03CAB245ADD42DEEE0E14F4C505942B14141</key>
+		<string>github.com:bastienbeurier/street-shout-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>street-shout-ios.xcodeproj/project.xcworkspace</string>
+	<string>street-shout-ios.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E0BE5306-B187-41B4-912D-5B08E5290F99</key>
+		<key>2F7C03CAB245ADD42DEEE0E14F4C505942B14141</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/bastienbeurier/street-shout-ios.git</string>
+	<string>github.com:bastienbeurier/street-shout-ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E0BE5306-B187-41B4-912D-5B08E5290F99</string>
+	<string>2F7C03CAB245ADD42DEEE0E14F4C505942B14141</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E0BE5306-B187-41B4-912D-5B08E5290F99</string>
+			<string>2F7C03CAB245ADD42DEEE0E14F4C505942B14141</string>
 			<key>IDESourceControlWCCName</key>
 			<string>street-shout-ios</string>
 		</dict>

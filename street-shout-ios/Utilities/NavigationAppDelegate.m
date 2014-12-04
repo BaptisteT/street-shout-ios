@@ -40,24 +40,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // !!!: Use setDeviceIdentifier (removing deprecated warning with clang pragmas)
-#ifdef TESTING
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
-#pragma clang diagnostic pop
-#endif
     
     // Populate AirshipConfig.plist with your app's info from https://go.urbanairship.com
     // or set runtime properties here.
     UAConfig *config = [UAConfig defaultConfig];
     
     if (PRODUCTION) {
-        [TestFlight takeOff:kProdTestFlightAppToken];
         [Mixpanel sharedInstanceWithToken:kProdMixPanelToken];
         config.inProduction = YES;
     } else {
-        [TestFlight takeOff:kDevTestFlightAppToken];
         [Mixpanel sharedInstanceWithToken:kDevMixPanelToken];
         config.inProduction = NO;
     }

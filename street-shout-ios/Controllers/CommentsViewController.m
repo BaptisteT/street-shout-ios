@@ -149,7 +149,7 @@
         cell.commentsTableViewCellDelegate = self;
         cell.commenterId = comment.commenterId;
         cell.usernameLabel.text = [NSString stringWithFormat:@"@%@",comment.commenterUsername];
-        cell.descriptionLabel.text = comment.description;
+        cell.descriptionLabel.text = comment.commentDescription;
         
         NSArray *commentAgeStrings = [TimeUtilities ageToShortStrings:[TimeUtilities getShoutAge:comment.created]];
         
@@ -195,7 +195,7 @@
         Comment *comment = (Comment *)self.comments[indexPath.row];
         
         cell.usernameLabel.text = [NSString stringWithFormat:@"@%@",comment.commenterUsername];
-        cell.descriptionLabel.text = comment.description;
+        cell.descriptionLabel.text = comment.commentDescription;
         
         cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
         

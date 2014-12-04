@@ -18,7 +18,7 @@
 @property (nonatomic) NSUInteger shouterId;
 @property (nonatomic) NSUInteger commenterId;
 @property (nonatomic, strong) NSString *commenterUsername;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *commentDescription;
 @property (nonatomic) double lat;
 @property (nonatomic) double lng;
 @property (strong, nonatomic) NSString *created;

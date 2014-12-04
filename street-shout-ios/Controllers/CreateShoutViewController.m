@@ -212,7 +212,9 @@
 // Utilities
 
 - (void)keyboardWillShow:(NSNotification *)notification {
+    CGRect ss = self.containerView.frame;
     [KeyboardUtilities pushUpTopView:self.containerView whenKeyboardWillShowNotification:notification];
+    ss = self.containerView.frame;
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
@@ -238,9 +240,6 @@
     toast.yOffset = -100.f;
     [toast hide:YES afterDelay:1];
 }
-
-
-
 
 
 @end
