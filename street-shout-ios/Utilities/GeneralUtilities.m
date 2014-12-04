@@ -172,4 +172,20 @@
     textView.frame = newFrame;
 }
 
++ (BOOL)systemVersionIsEqualTo:(NSString *)v
+{
+    return [[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame;
+}
+
++ (BOOL)systemVersionIsGreaterThan:(NSString *)v
+{
+    return [[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending;
+}
+
++ (BOOL)systemVersionIsGreaterThanOrEqualTo:(NSString *)v
+{
+    return [[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending;
+}
+
+
 @end

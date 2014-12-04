@@ -40,4 +40,8 @@
 
 + (void)adaptHeightTextView:(UITextView *)textView;
 
++ (BOOL)systemVersionIsGreaterThan:(NSString *)v;
+
++ (BOOL)systemVersionIsGreaterThanOrEqualTo:(NSString *)v;
+
 @end
