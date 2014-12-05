@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Mixpanel.h"
 #import "User.h"
 #import "Shout.h"
 

@@ -17,7 +17,6 @@
 #import "MultipleViewController.h"
 #import "Shout.h"
 #import "AFStreetShoutAPIClient.h"
-#import "Mixpanel.h"
 #import "TrackingUtilities.h"
 #import "SessionUtilities.h"
 #import "WelcomeViewController.h"
@@ -46,10 +45,10 @@
     UAConfig *config = [UAConfig defaultConfig];
     
     if (PRODUCTION) {
-        [Mixpanel sharedInstanceWithToken:kProdMixPanelToken];
+//        [Mixpanel sharedInstanceWithToken:kProdMixPanelToken];
         config.inProduction = YES;
     } else {
-        [Mixpanel sharedInstanceWithToken:kDevMixPanelToken];
+//        [Mixpanel sharedInstanceWithToken:kDevMixPanelToken];
         config.inProduction = NO;
     }
     

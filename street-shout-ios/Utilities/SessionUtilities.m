@@ -8,7 +8,6 @@
 
 #import "SessionUtilities.h"
 #import "Constants.h"
-#import "Mixpanel.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @implementation SessionUtilities
@@ -96,9 +95,6 @@
 // Remove FB session and user token
 + (void)wipeOffCredentials
 {
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel reset];
-    
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
