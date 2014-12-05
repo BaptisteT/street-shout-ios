@@ -8,6 +8,12 @@
 
 "just_now" = "just now";
 "now" = "now";
+"day" = "day";
+"days" = "days";
+"week" = "week";
+"weeks" = "weeks";
+"year" = "year";
+"years" = "years";
 "hour" = "hour";
 "hours" = "hours";
 "minute" = "min";

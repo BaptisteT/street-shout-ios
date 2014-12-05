@@ -40,9 +40,6 @@
 
 @implementation ExploreViewController
 
-// todo bt
-// pb auto layout textfield
-
 - (void)viewDidLoad
 {
     //Buttons round corner

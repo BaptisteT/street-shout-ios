@@ -317,7 +317,7 @@
                                             <outletCollection property="gestureRecognizers" destination="kNv-sj-CHu" appends="YES" id="ySh-Yx-a1l"/>
                                         </connections>
                                     </label>
-                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6D00CA0D-B1BC-4BC2-AC84-488F1F457C4C" translatesAutoresizingMaskIntoConstraints="NO" id="Pnl-rI-mqi">
+                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0183C580-B67E-435C-B81C-D78F4BE5F6D8" translatesAutoresizingMaskIntoConstraints="NO" id="Pnl-rI-mqi">
                                         <rect key="frame" x="260" y="125" width="50" height="50"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -1848,7 +1848,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6D00CA0D-B1BC-4BC2-AC84-488F1F457C4C" width="80" height="80">
+        <image name="0183C580-B67E-435C-B81C-D78F4BE5F6D8" width="80" height="80">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -2354,8 +2354,8 @@ sgC1ALcAuQC7AL0AwgDZANsA3W1PbVRtX21obXttf22SbZ1tpm2rbbNttm27bcptzm3Vbd1t6m3vbfFt
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="KrF-uM-jix"/>
         <segue reference="fbw-tr-rR7"/>
-        <segue reference="SoN-JU-REY"/>
         <segue reference="bXp-H4-gUw"/>
     </inferredMetricsTieBreakers>
 </document>

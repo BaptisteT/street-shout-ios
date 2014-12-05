@@ -121,6 +121,19 @@
     [super viewWillAppear:animated];
 }
 
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    if ([self.shoutAgeLabel.text containsString:@"|"]) {
+        return;
+    }
+    if (userLocation && userLocation.coordinate.longitude != 0 && userLocation.coordinate.latitude != 0) {
+        NSArray *shoutDistanceStrings = [LocationUtilities formattedDistanceLat1:userLocation.coordinate.latitude lng1:userLocation.coordinate.longitude lat2:self.shout.lat lng2:self.shout.lng];
+        self.shoutAgeLabel.text = [NSString stringWithFormat:@" %@ | %@%@", self.shoutAgeLabel.text, [shoutDistanceStrings firstObject], [shoutDistanceStrings objectAtIndex:1]];
+    } else {
+        self.shoutAgeLabel.text = [NSString stringWithFormat:@" %@ | ?", self.shoutAgeLabel.text];
+    }
+}
+
 - (void)updateUI
 {
     //Get comment count and liker ids
@@ -178,12 +191,9 @@
         self.shoutAgeLabel.text = [NSString stringWithFormat:@"%@%@", [shoutAgeStrings firstObject], [shoutAgeStrings objectAtIndex:1]];
         
         MKUserLocation *myLocation = self.mapView.userLocation;
-        
         if (myLocation && myLocation.coordinate.longitude != 0 && myLocation.coordinate.latitude != 0) {
             NSArray *shoutDistanceStrings = [LocationUtilities formattedDistanceLat1:myLocation.coordinate.latitude lng1:myLocation.coordinate.longitude lat2:self.shout.lat lng2:self.shout.lng];
             self.shoutAgeLabel.text = [NSString stringWithFormat:@" %@ | %@%@", self.shoutAgeLabel.text, [shoutDistanceStrings firstObject], [shoutDistanceStrings objectAtIndex:1]];
-        } else {
-            self.shoutAgeLabel.text = [NSString stringWithFormat:@" %@ | ?", self.shoutAgeLabel.text];
         }
     }
 }
